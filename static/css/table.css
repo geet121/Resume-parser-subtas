@@ -1,0 +1,43 @@
+div {
+    position: relative;
+    overflow: hidden;
+  }
+  input {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+
+/* .close-icon {
+    position: absolute;
+    right: 5px;
+    margin-top: 5px;
+    color: #fff;
+    font-size: 12px;
+   }
+  
+  .inner {
+    position: relative;
+    background: #ccc;
+    height: 40px;
+    width: 100%;
+    margin: 5px;
+  }
+  
+  .outer {
+    height: 90px;
+    width: 100px;
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+  } */
+
+  .navigate {
+    text-align: left;
+    font-size: 15px;
+  }
