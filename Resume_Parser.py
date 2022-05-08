@@ -26,10 +26,48 @@ def ch():
     return render_template('resume_checker.html')
 
 @app.route("/res")
-def tos():
+def res1():
     workingdir = os.path.abspath(os.getcwd())
-    filepath = workingdir + '/resumes_files'
-    return send_from_directory(filepath, 'tos.pdf')
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'Akhil.profile.pdf')
+
+@app.route("/res2")
+def res2():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'AnilAgarwal.pdf')
+
+@app.route("/res3")
+def res3():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'Dhruvi.pdf')
+
+@app.route("/res4")
+def res4():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'Jennifer  M. Conte.pdf')
+
+@app.route("/res5")
+def res5():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'Akhil.profile.pdf')
+
+@app.route("/res6")
+def res6():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/resume_files'
+    return send_from_directory(filepath, 'Rajesh_k.pdf')
+
+@app.route("/JD")
+def JD():
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/JD_files'
+    return send_from_directory(filepath, 'Yabble Machine Learning Engineer Job Description.pdf')
+
+
 
 # @app.route('/<id>')
 # def show_pdf(id=None):

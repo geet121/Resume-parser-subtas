@@ -34,4 +34,12 @@
     text-align: center;
     }
 
+.head{
+    margin-left: 50px;
+}
+
+.d-grid gap-2 col-6 mx-auto{
+    width: fit-content;
+}
+
 

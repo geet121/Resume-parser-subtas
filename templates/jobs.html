@@ -12,6 +12,7 @@
     <a href="/candidate">
       <i class="fa fa-users" aria-hidden="true"></i>
       <span>Candidates</span>
+
     </a>
     <a href="/checker">
       <i class="fa fa-check" aria-hidden="true"></i>
@@ -20,7 +21,7 @@
   </div>  
 
 
-  <h1>Jobs</h1>
+  <h1 class = 'head'>Jobs</h1>
 
   
   <div class="mx-auto" style="width: 400px;">
@@ -49,19 +50,133 @@
     <input type="text" name="format" value="" />
 </div> -->
 
+<div class="mt-5 col-md-12"></div>
+
+<div class="container">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title"><div class="row">
+              <div class="col-12">
+                    <div class="card-body">
+                      <div id="table" class="">
+                      </div>
+        
+                        <style>
+                          .button {
+                            border: none;
+                            color: white;
+                            padding: 15px 32px;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 30px;
+                            margin-left: 50px;
+                            cursor: pointer;
+                            background-color: blue;
+                          }
+                          </style>
+                         
+                          
+                         <table class="table table-bordered table-responsive-md table-striped text-center"> 
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col"> View Job Description</th>
+                          <th scope="col"> Job Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                              <div>
+                                <button class="btn btn-primary btn-sm" onclick="location.href = '/JD';">View JD</button>
+                                <!-- <button onclick="location.href = '../resume_files/Akhil.profile.pdf';">View Resume</button> -->
+                                </div>
+                           
+                          </td>
+                          <td class="pt-3-half" contenteditable="true">ML Engineer</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>
+                              <button class="btn btn-primary btn-sm"  onclick="location.href = '/JD'">View JD</button>
+                              <!-- <a href="/resume_files/Jennifer  M. Conte.pdf" target="_blank"> -->
+
+                                  <!-- <button onclick="location.href = '/resume_files/Achyuth_Resume_8.pdf';">View Resume</button> -->
+                                  <!-- <iframe src="/resume_files/Achyuth Resume_8.pdf" style="width: 100%;height:150px;"></iframe> -->
+                                </div>
+                            
+                          </td>
+                          <td class="pt-3-half" contenteditable="true">Data Scientist</td>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td>
+                          <div>
+                            <button class="btn btn-primary btn-sm"  onclick="location.href = '/JD'">View JD</button>
+                              <!-- <button onclick="location.href = '/resume_files/Achyuth_Resume_8.pdf';">View JD</button> -->
+                              
+                            </div>
+                          
+                      </td>
+                      <td class="pt-3-half" contenteditable="true">Embedded Engineer</td>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div>
+                            <button class="btn btn-primary btn-sm" onclick="location.href = '/JD'">View JD</button>
+                              <!-- <button onclick="location.href = '/resume_files/Achyuth_Resume_8.pdf';">View Resume</button>
+                              <iframe src="/resume_files/Achyuth Resume_8.pdf" style="width: 100%;height:150px;"></iframe> -->
+                            </div>
+                      
+                      </td>
+                      <td class="pt-3-half" contenteditable="true">Verification Engineer</td>
+                      <td>
+                        
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div>
+                            <button class="btn btn-primary btn-sm"  onclick="location.href = '/JD'">View JD</button>
+                            <!-- <button onclick="location.href = '/resume_files/Achyuth_Resume_8.pdf';">View Resume</button>
+                              <iframe src="/resume_files/Achyuth Resume_8.pdf" style="width: 100%;height:150px;"></iframe> -->
+                            </div>
+                      
+                      </td>
+                      <td class="pt-3-half" contenteditable="true">Devops Engineer</td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <div>
+                          <button class="btn btn-primary btn-sm"  onclick="location.href = '/JD'">View JD</button>
+                           <!---- <iframe src="/resume_files/Achyuth Resume_8.pdf" style="width: 100%;height:150px;"></iframe> -->
+                          </div>
+                    
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">Web Developer</td>
+                  </tr>
+                </tbody>
+              </table>
+        
+
   <br/>
+  <div class="mt-5 col-md-12"></div>
+
   <div class="center">
     <h3> Select Job Description </h3>
     <input list="document" name="document">
     <datalist id="document">
-    <option value="ML Engineer">
-    <option value="Frontend Developer">
-    <option value="Embedded Engineer">
-    <option value="Software Engineer">
-    <option value="Management">
+    <option value="ML Engineer" href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
+    <option value="Data Scientist" href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
+    <option value="Embedded Engineer" href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
+    <option value="Verification Engineer" href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
+    <option value="Devops Engineer" href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
+    <option value="Web Developer " href = '/JD files/Yabble Machine Learning Engineer Job Description.pdf'>
     </datalist>
   </div>
 
+  
 
 
 
