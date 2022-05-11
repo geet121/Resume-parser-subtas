@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../static/css/jobs.css">
 
 <div class = "navigate">
-    <a href="/" class="active">
+    <a href="/index" class="active">
       <i class="fa fa-home" aria-hidden="true"></i>
       <span>Home</span>
     </a>
@@ -53,7 +53,6 @@
     <input type="text" name="format" value="" />
 </div> -->
 
-<div class="mt-5 col-md-12"></div>
 
 <div class="container">
   <!-- <div class="table-responsive"> -->
@@ -61,7 +60,7 @@
           <!-- <div class="table-title"><div class="row"> -->
               <!-- <div class="col-12"> -->
                     <!-- <div class="card-body"> -->
-                      <div id="table" >
+                      <div id="table" class="" >
                       </div>
         
                         <style>
@@ -76,28 +75,19 @@
                             margin-left: 50px;
                             cursor: pointer;
                             background-color: blue;
-                            box-sizing: border-box;
                           }
-                          .column {
-                              float: left;
-                              padding: 10px;
-                              height: 300px; /* Should be removed. Only for demonstration */
-                            }
+                          body {
+                            background: #f5f5f5;
+                            font-family: 'Roboto', sans-serif;
+                          }
 
-                            .left {
-                              width: 25%;
+                          .table-wrapper {
+                            min-width: 1000px;    
+                            background: #fff;
+                            padding: 20px;        
+                            box-shadow: 0 1px 1px rgba(0,0,0,.05);
                             }
-
-                            .right {
-                              width: 75%;
-                            }
-
-                            /* Clear floats after the columns */
-                            .row:after {
-                              content: "";
-                              display: table;
-                              clear: both;
-                            }
+                          
                           </style>
                          
                           

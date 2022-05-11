@@ -5,9 +5,25 @@ from flask import (Flask,session,flash, redirect, render_template, request, url_
 app = Flask(__name__,template_folder="templates")
 app.config.from_object(__name__) 
 
+# @app.route("/")
+# def index():
+#     return render_template('Sign_in.html')
+
+# Route for handling the login page logic
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        print(request.form['username'])
+        print(request.form['password'])
+        if request.form['username'] != 'admin@gmail.com' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('index'))
+    return render_template('Sign_in.html', error=error)
 
 
-@app.route("/")
+@app.route("/index")
 def index():
     return render_template('index.html')
 
