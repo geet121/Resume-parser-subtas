@@ -33,7 +33,7 @@
       //     $(this).attr("disabled", "disabled");
       //     var index = $("table tbody tr:last-child").index();
       //     var row = '<tr>' +
-      //         '<td><input type="text" class="form-control" name="name" id="Candidate"></td>' +
+      cbx//         '<td><input type="text" class="form-control" name="name" id="Candidate"></td>' +
       //         '<td><input type="text" class="form-control" name="name" id="name"></td>' +
       //         '<td><input type="text" class="form-control" name="department" id="emailid"></td>' +
       //         '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
@@ -101,24 +101,18 @@
                                   box-shadow: 0 1px 1px rgba(0,0,0,.05);
                               }
                             </style>
-                            <h2>Add Candidate:
+                            <h2>Add Candidate:</h2>
+			<form role="form" method='POST' action="/upload" enctype="multipart/form-data">
                               <div>         
                                 <label for="formFileMultiple" class="form-label"></label>
-                                <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                <input class="form-control" type="file" id="formFileMultiple" multiple name="Resumefiles" />
+                    
+                              <button type="submit" class="btn btn-info add-new" ><i class=""></i> Submit</button>
+
                               </div>
-                              <button type="button" class="btn btn-info add-new" ><i class=""></i> Submit</button>
-                              
+                                </form>
                                 
-                                <!-- <div>         
-                                  <label for="
-                                  formFileMultiple" class="form-label"></label>
-                                  <input class="form-control" type="file" id="formFileMultiple" multiple />
-                                </div>  -->
-                                <!-- <form action="/uploader" method="post"  > 
-                                <input type="file" name="file1">   
-                                </form> -->
-                              </a>
-                            </h2>
+                       
                             
                            <table class="table table-bordered table-responsive-md table-striped text-center"> 
                       <table class="table table-bordered">

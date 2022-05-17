@@ -1,13 +1,19 @@
-from flask import Flask
 import os
 from flask import (Flask,session,flash, redirect, render_template, request, url_for, send_from_directory)
+import csv
+
 
 app = Flask(__name__,template_folder="templates")
 app.config.from_object(__name__) 
 
-# @app.route("/")
-# def index():
-#     return render_template('Sign_in.html')
+app.config['UPLOAD_FOLDER'] = 'Upload-Resume'
+app.config['UPLOAD_JD_FOLDER'] = 'Upload-JD'
+
+
+def getfilepath(loc):
+    temp = str(loc).split('\\')
+    return temp[-1]
+
 
 # Route for handling the login page logic
 @app.route('/', methods=['GET', 'POST'])
@@ -32,9 +38,11 @@ def main():
     return render_template('candidate_resume.html')
     
 
-@app.route("/jobs")
+@app.route("/jobs", methods=['GET', 'POST'])
 def job():
-    return render_template('jobs.html')
+    error = None
+    x = os.listdir(app.config['UPLOAD_JD_FOLDER'])
+    return render_template('jobs.html',name=x)
 
 
 @app.route("/checker")
@@ -79,17 +87,68 @@ def res6():
 
 @app.route("/JD")
 def JD():
+    x = os.listdir(app.config['UPLOAD_FOLDER'])
     workingdir = os.path.abspath(os.getcwd())
     filepath = workingdir + '/JD_files'
-    return send_from_directory(filepath, 'Yabble Machine Learning Engineer Job Description.pdf')
+    return render_template('jobs.html', name = x)
+    #return send_from_directory(name = x)
 
+@app.route('/Upload-Resume/<path:filename>')
+def custom_static(filename):
+    print(filename)
+    return send_from_directory('./Upload-JD', filename)
 
+# Upload files
+@app.route("/upload", methods=['POST'])
+def upload_file():
+    Error = None
+    if request.method=='POST':
+        #upload Job Description
+        if 'Jdfiles'in request.files:
+            filelist = [ f for f in os.listdir(app.config['UPLOAD_JD_FOLDER']) ]  
+            x = os.listdir(app.config['UPLOAD_JD_FOLDER'])
+            for f in request.files.getlist('Jdfiles'):
+                if f.filename in x:
+                    Error = "All Ready "+f.filename +" Existed"
+                else:
+                    f.save(os.path.join(app.config['UPLOAD_JD_FOLDER'], f.filename))   
+            x = os.listdir(app.config['UPLOAD_JD_FOLDER'])
+            return render_template('jobs.html', name = x)
+    
+        #upload Resume
+        if 'Resumefiles' in request.files:
+            filelist = [ f for f in os.listdir(app.config['UPLOAD_FOLDER']) ]  
+            x = os.listdir(app.config['UPLOAD_FOLDER'])
+            for f in request.files.getlist('Resumefiles'):
+                if f.filename in x:
+                    Error = "All Ready "+f.filename +" Existed"
+                else:
+                    f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))   
+            x = os.listdir(app.config['UPLOAD_FOLDER'])
+            return render_template('candidate_resume.html',name = x)
+"""        
+# Fetch data
+def source_data():
+    x = os.listdir(app.config['UPLOAD_FOLDER'])
+    fields = ['Candidate', 'Name', 'Email', 'Phone no','Skills','Qualification','Experience','Company Name'] 
+    
+    # name of csv file 
+    filename = "records.csv"
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + 'Results'
+    # writing to csv file 
+    with open((os.path.join(filepath, filename)), 'w') as csvfile: 
+        # creating a csv writer object 
+        csvwriter = csv.writer(csvfile) 
 
-# @app.route('/<id>')
-# def show_pdf(id=None):
-#     if id is not None:
-#         return render_template('doc.html', doc_id=id)
+        # writing the fields 
+        csvwriter.writerow(fields) 
 
-
+        # writing the data rows 
+        #csvwriter.writerows(rows)
+    df = pandas.read_csv((os.path.join(filepath, filename), index_col=False, header=0);
+    serie = df.ix[0,:]
+    print(serie)                  
+"""    
 if __name__ == '__main__':
    app.run(debug=True ,use_reloader=False)
